@@ -1,16 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4uig5yrcj8n4"]
+[gd_scene load_steps=15 format=3 uid="uid://b4uig5yrcj8n4"]
 
-[ext_resource type="Texture2D" uid="uid://c1yhoo36b84dn" path="res://Assets/FPS-controller-assets-main/textures/dev/grids/Dark/texture_07.png" id="1_8vylg"]
-[ext_resource type="Material" uid="uid://c2kj8essu2v8l" path="res://Materials/TestMat.tres" id="1_lh10j"]
-[ext_resource type="Texture2D" uid="uid://dd7oqqubceatk" path="res://Assets/FPS-controller-assets-main/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_b6r0x"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="4_y864k"]
+[ext_resource type="PackedScene" uid="uid://cbc2mt7nig1c3" path="res://Scenes/initializer.tscn" id="1_lsn3x"]
+[ext_resource type="PackedScene" uid="uid://bov0mu4hsui8o" path="res://Scenes/grid.tscn" id="2_5mt5l"]
+[ext_resource type="Texture2D" uid="uid://c1yhoo36b84dn" path="res://Assets/FPS-controller-assets-main/textures/dev/grids/Dark/texture_07.png" id="3_37t47"]
+[ext_resource type="Texture2D" uid="uid://dd7oqqubceatk" path="res://Assets/FPS-controller-assets-main/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="4_kujym"]
+[ext_resource type="Material" uid="uid://c2kj8essu2v8l" path="res://Materials/TestMat.tres" id="5_vbdt3"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="6_s4jpj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dq8"]
-albedo_texture = ExtResource("1_8vylg")
+albedo_texture = ExtResource("3_37t47")
 uv1_triplanar = true
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5c8ty"]
-panorama = ExtResource("2_b6r0x")
+panorama = ExtResource("4_kujym")
 
 [sub_resource type="Sky" id="Sky_j8wu7"]
 sky_material = SubResource("PanoramaSkyMaterial_5c8ty")
@@ -30,7 +32,11 @@ glow_enabled = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygymb"]
 height = 1.2
 
-[node name="VoidSong_World" type="Node3D"]
+[node name="VoidSweeper" type="Node3D"]
+
+[node name="initializer" parent="." instance=ExtResource("1_lsn3x")]
+
+[node name="grid" parent="." instance=ExtResource("2_5mt5l")]
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -57,16 +63,16 @@ shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54255, 5.22042, 0)
-material_override = ExtResource("1_lh10j")
+material_override = ExtResource("5_vbdt3")
 mesh = SubResource("BoxMesh_qls52")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43169, 5.06866, 0.100149)
-material_override = ExtResource("1_lh10j")
+material_override = ExtResource("5_vbdt3")
 mesh = SubResource("SphereMesh_ppxj2")
 
 [node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("4_y864k")
+script = ExtResource("6_s4jpj")
 sprint_speed = 11.0
 crouch_speed = 2.0
 

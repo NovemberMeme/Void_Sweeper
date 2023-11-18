@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbc2mt7nig1c3"]
+
+[ext_resource type="Script" path="res://Scripts/initializer.gd" id="1_wm807"]
+[ext_resource type="PackedScene" uid="uid://bov0mu4hsui8o" path="res://Scenes/grid.tscn" id="2_r1d7u"]
+
+[node name="initializer" type="Node3D"]
+script = ExtResource("1_wm807")
+grid_packedscene = ExtResource("2_r1d7u")

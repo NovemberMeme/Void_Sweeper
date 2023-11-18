@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Void Sweeper"
-run/main_scene="res://Scenes/VoidSongI.tscn"
+run/main_scene="res://Scenes/VoidSweeper.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+game_manager="*res://Scripts/game_manager.gd"
 
 [dotnet]
 
