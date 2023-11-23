@@ -8,6 +8,7 @@ var grid_array: Array
 var mine_percentage: float = 0.15 # Percentage of total blocks that will be mines
 var safe_block_percentage: float = 0.10 # Percentage of total blocks that will be safe
 var grid_size: Vector3i = Vector3i(10,10,10)
+var offset_multiplier: float = 1.2
 
 # Dependencies (you need to set these in the editor or via code)
 # These are the PackedScenes for your blocks
@@ -16,7 +17,8 @@ var block_scene = preload("res://Scenes/block.tscn")
 var mine_block_scene: PackedScene
 var safe_block_scene: PackedScene
 
-func ready():
+func _ready():
+	print("grid ready()")
 	grid_size = Vector3i(grid_size.x, grid_size.y, grid_size.z)
 	grid_array = []
 	_create_grid()
@@ -32,14 +34,17 @@ func _create_grid():
 				var block = _create_block(Vector3i(x, y, z))
 				grid_z.append(block)
 			grid_y.append(grid_z)
-		grid.append(grid_y)
+		grid_array.append(grid_y)
 
 func _create_block(newblock_index: Vector3i) -> block:
 	print(newblock_index)
 	# Create and position the block instance
 	#var newblock_instance = block_scene.instantiate()
 	var newblock_instance = block_packedscene.instantiate() as block
-	newblock_instance.global_transform.origin = newblock_index
+	newblock_instance.global_transform.origin = Vector3(
+		newblock_index.x * offset_multiplier, 
+		newblock_index.y * offset_multiplier, 
+		newblock_index.z * offset_multiplier)
 	newblock_instance.initialize_block(newblock_index)
 	# Add the block instance as a child of the GridManager
 	add_child(newblock_instance)

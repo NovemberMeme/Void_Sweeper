@@ -68,12 +68,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54255, 5.22042, 0)
 material_override = ExtResource("5_vbdt3")
 mesh = SubResource("BoxMesh_qls52")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9482, 5.22042, 0)
+material_override = ExtResource("5_vbdt3")
+mesh = SubResource("BoxMesh_qls52")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43169, 5.06866, 0.100149)
 material_override = ExtResource("5_vbdt3")
 mesh = SubResource("SphereMesh_ppxj2")
 
 [node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25733, 3.86528, 7.8923)
 script = ExtResource("6_s4jpj")
 sprint_speed = 11.0
 crouch_speed = 2.0
