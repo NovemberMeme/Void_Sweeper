@@ -4,10 +4,10 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3vuq"]
 
-[node name="block" type="CSGBox3D"]
+[node name="block" type="CSGBox3D" groups=["block"]]
 script = ExtResource("1_tk6qi")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["block"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["block"]]
 shape = SubResource("BoxShape3D_l3vuq")

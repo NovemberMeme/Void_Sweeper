@@ -37,7 +37,7 @@ func _create_grid():
 		grid_array.append(grid_y)
 
 func _create_block(newblock_index: Vector3i) -> block:
-	print(newblock_index)
+	print("newblock_index = " + str(newblock_index))
 	# Create and position the block instance
 	#var newblock_instance = block_scene.instantiate()
 	var newblock_instance = block_packedscene.instantiate() as block

@@ -1,11 +1,17 @@
-extends Node
+extends RayCast3D
 
+var interactable_detected = false
+var interactable_group = "block"  # Replace with your group name
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if is_colliding():
+		var collider = get_collider()
+		# Check if the collider is in the specified group
+		if collider and collider.is_in_group("block"):
+			interactable_detected = true
+			print("interactable_detected = " + str(interactable_detected))
+		else:
+			interactable_detected = false
+	else:
+		interactable_detected = false
+	
