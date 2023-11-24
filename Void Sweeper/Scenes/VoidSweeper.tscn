@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4uig5yrcj8n4"]
+[gd_scene load_steps=15 format=3 uid="uid://b4uig5yrcj8n4"]
 
 [ext_resource type="PackedScene" uid="uid://cbc2mt7nig1c3" path="res://Scenes/initializer.tscn" id="1_lsn3x"]
 [ext_resource type="PackedScene" uid="uid://bov0mu4hsui8o" path="res://Scenes/grid.tscn" id="2_5mt5l"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd7oqqubceatk" path="res://Assets/FPS-controller-assets-main/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="4_kujym"]
 [ext_resource type="Material" uid="uid://c2kj8essu2v8l" path="res://Materials/TestMat.tres" id="5_vbdt3"]
 [ext_resource type="PackedScene" uid="uid://0tposprjawkd" path="res://Scenes/player.tscn" id="7_vi54a"]
+[ext_resource type="PackedScene" uid="uid://dg58j2se83rni" path="res://Assets/3d_assets/3d_numbers.fbx" id="8_8i0th"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dq8"]
 albedo_texture = ExtResource("3_37t47")
@@ -75,3 +76,6 @@ mesh = SubResource("SphereMesh_ppxj2")
 
 [node name="Player" parent="." instance=ExtResource("7_vi54a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3.32415, 0)
+
+[node name="3d_numbers" parent="." instance=ExtResource("8_8i0th")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7294, 2.96782, 3.7685)
