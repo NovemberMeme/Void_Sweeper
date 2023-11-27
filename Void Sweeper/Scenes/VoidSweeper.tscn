@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd7oqqubceatk" path="res://Assets/FPS-controller-assets-main/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="4_kujym"]
 [ext_resource type="Material" uid="uid://c2kj8essu2v8l" path="res://Materials/TestMat.tres" id="5_vbdt3"]
 [ext_resource type="PackedScene" uid="uid://0tposprjawkd" path="res://Scenes/player.tscn" id="7_vi54a"]
-[ext_resource type="PackedScene" uid="uid://dg58j2se83rni" path="res://Assets/3d_assets/3d_numbers.fbx" id="8_8i0th"]
+[ext_resource type="PackedScene" uid="uid://egoofb5wiybh" path="res://Scenes/3d_number_scenes/proximity_number.tscn" id="8_aeq1i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45dq8"]
 albedo_texture = ExtResource("3_37t47")
@@ -77,5 +77,11 @@ mesh = SubResource("SphereMesh_ppxj2")
 [node name="Player" parent="." instance=ExtResource("7_vi54a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3.32415, 0)
 
-[node name="3d_numbers" parent="." instance=ExtResource("8_8i0th")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7294, 2.96782, 3.7685)
+[node name="proximity_number" parent="." instance=ExtResource("8_aeq1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="proximity_number2" parent="." instance=ExtResource("8_aeq1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="proximity_number3" parent="." instance=ExtResource("8_aeq1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6)

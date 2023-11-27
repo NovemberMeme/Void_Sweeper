@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://buwsw7a66qy3m"]
+
+[ext_resource type="PackedScene" uid="uid://b1b63p8at1twp" path="res://Assets/3d_assets/3d_1.fbx" id="1_kpjdb"]
+
+[node name="3d_1" type="Node3D"]
+
+[node name="3d_1" parent="." instance=ExtResource("1_kpjdb")]

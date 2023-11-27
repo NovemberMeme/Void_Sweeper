@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6215u57qg2pl"]
+
+[ext_resource type="PackedScene" uid="uid://h0e32oygvqbu" path="res://Assets/3d_assets/3d_2.fbx" id="1_opc3d"]
+
+[node name="3d_2" type="Node3D"]
+
+[node name="3d_2" parent="." instance=ExtResource("1_opc3d")]
